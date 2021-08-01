@@ -1,0 +1,24 @@
+# Display-Success-Message-Django
+
+
+### Add this line at View.py 
+from django.contrib import messages
+
+messages.success(request, f"Invoice No : { Variable }, Successfully Deleted.")
+
+
+
+
+<!-- Successful message Dispaly -->
+<div class="oneline text-center">
+  {% if messages %}
+     {% for message in messages %}
+  <div class="alert alert-success alert-dismissible fade show" role="alert">
+   {{ message }}
+   <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+     <span aria-hidden="true">&times;</span>
+ </div>
+     {% endfor %}
+ {% endif %}
+</div>
+<!-- Successful message Dispaly End-->
